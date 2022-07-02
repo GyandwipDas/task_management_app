@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+}
+.left-container {
+  align-items: center;
+  display: flex;
+  flex: 0.6;
+  justify-content: center;
+  /* margin: 20px; */
+}
+.image {
+  width: 70%;
+  justify-content: center;
+}
+.right-container {
+  justify-content: center;
+  display: block;
+  flex: 0.4;
+  /* margin: 20px; */
+}

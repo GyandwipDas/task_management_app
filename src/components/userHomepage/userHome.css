@@ -1,0 +1,28 @@
+.userHome-container {
+  display: flex;
+  flex-direction: row;
+}
+
+table,
+th,
+td {
+  border: 1.5px solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.table-container {
+  flex: 0.6;
+  text-align: center;
+}
+
+.stats {
+  flex: 0.4;
+  text-align: left;
+}
+
+.percentage {
+  color: crimson;
+}

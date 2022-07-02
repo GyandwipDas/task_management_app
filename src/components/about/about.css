@@ -1,0 +1,21 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  /* text-align: center; */
+}
+
+.right-about-container {
+  justify-content: center;
+  /* display: flex; */
+  flex: 0.5;
+}
+.left-about-container {
+  text-align: center;
+  display: block;
+  flex: 0.5;
+}
+
+.image-about {
+  width: 70%;
+  justify-content: center;
+}

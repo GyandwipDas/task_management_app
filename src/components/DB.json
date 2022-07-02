@@ -1,0 +1,41 @@
+{
+  "numOfUsers": 2,
+  "message": "",
+  "currentUser": "",
+  "users": [
+    {
+      "uid": 1,
+      "username": "Gyandwip Das",
+      "email": "dasgyandwip@gmail.com",
+      "password": "gyandwip",
+      "tasks": [
+        {
+          "tid": 1,
+          "task": "meditate",
+          "date": "29-6-2022",
+          "status": "complete"
+        },
+        {
+          "tid": 2,
+          "task": "workout",
+          "date": "29-6-2022",
+          "status": "incomplete"
+        }
+      ]
+    },
+    {
+      "uid": 2,
+      "username": "Harshdwip Das",
+      "email": "dasharshdwip@gmail.com",
+      "password": "harsh",
+      "tasks": [
+        {
+          "tid": 1,
+          "task": "meditate",
+          "date": "29-6-2022",
+          "status": "complete"
+        }
+      ]
+    }
+  ]
+}

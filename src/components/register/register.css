@@ -1,0 +1,26 @@
+.register-container {
+  display: flex;
+  flex-direction: row;
+  /* text-align: justify; */
+}
+
+.left-register-container {
+  align-items: center;
+  /* display: flex; */
+  flex: 0.5;
+  justify-content: center;
+  padding: 30px;
+}
+
+.right-register-container {
+  align-items: center;
+  flex: 0.5;
+  justify-content: center;
+  padding: 30px;
+}
+
+.image-register {
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+}
