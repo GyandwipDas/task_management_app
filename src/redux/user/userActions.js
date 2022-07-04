@@ -27,10 +27,10 @@ export const LogoutRequest = (email, password) => {
   };
 };
 
-export const CreateTask = (task) => {
+export const CreateTask = (task, taskDueDate) => {
   return {
     type: CREATE_TASK,
-    payload: task,
+    payload: { task, taskDueDate },
   };
 };
 

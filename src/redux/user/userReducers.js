@@ -110,19 +110,20 @@ const userReducer = (state = initialState, action) => {
         taskarr = [];
       for (let i of state.currentUser.tasks) taskarr.push(i.task);
       // console.log(">", taskarr);
-      if (taskarr.includes(action.payload)) {
+      if (taskarr.includes(action.payload.task)) {
         ctdone = 0;
         alert("Task already exists!");
       }
-      if (!taskarr.includes(action.payload)) {
+      if (!taskarr.includes(action.payload.task)) {
         ctdone = 1;
       }
       if (ctdone === 1) {
         state.currentUser.tasks[state.currentUser.tasks.length] = {
           tid: state.currentUser.tasks.length + 1,
-          task: action.payload,
+          task: action.payload.task,
           date: date,
           status: "incomplete",
+          dueDate: action.payload.taskDueDate,
         };
         // state.users[state.currentUser.uid - 1] = state.currentUser;
         return {

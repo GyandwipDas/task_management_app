@@ -17,8 +17,11 @@ const UserHome = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let task = event.target[0].value;
+    let taskDueDate = event.target[1].value;
+    event.target[0].value = "";
+    event.target[1].value = "";
     // console.log(">>", task);
-    store.dispatch(CreateTask(task));
+    store.dispatch(CreateTask(task, taskDueDate));
     navigate("../userhome");
   };
 
@@ -49,6 +52,7 @@ const UserHome = () => {
               <th>date</th>
               <th>Task</th>
               <th>Status</th>
+              <th>Due Date</th>
               <th>Mark Done</th>
             </tr>
             {currStore.user.currentUser.tasks.map((e) => {
@@ -58,6 +62,7 @@ const UserHome = () => {
                   <td>{e.date}</td>
                   <td>{e.task}</td>
                   <td>{e.status}</td>
+                  <td>{e.dueDate}</td>
                   <td>
                     <input
                       type="checkbox"
@@ -66,6 +71,7 @@ const UserHome = () => {
                         navigate("../userhome");
                         console.log(ev.target.value);
                       }}
+                      checked={e.status === "complete" ? "checked" : null}
                     />
                   </td>
                 </tr>
@@ -75,9 +81,12 @@ const UserHome = () => {
           <br />
           <br />
           <form onSubmit={(e) => handleSubmit(e)}>
-            <label>Add task: </label> &nbsp; &nbsp;
+            <label>Add task: </label> &nbsp;
             <input type="text" id="newTask" />
-            &nbsp; &nbsp;
+            <br />
+            <label>Add task due date: </label> &nbsp;
+            <input type="text" id="newTaskDueDate" />
+            <br />
             <input type="submit" id="submitAddTask" />
           </form>
         </div>
