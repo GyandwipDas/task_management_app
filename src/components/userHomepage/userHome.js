@@ -6,8 +6,66 @@ import Header from "../header/header";
 import { CreateTask, TaskComplete } from "../../redux";
 import { useNavigate, Link } from "react-router-dom";
 
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let currStore = store.getState(),
+  date = new Date(),
+  todaysDate =
+    date.getMonth() + 1 + "-" + date.getDate() + "-" + date.getFullYear();
+
+const getMonthStats = () => {
+  currStore = store.getState();
+  let taskcomp = 0,
+    tottasks = 0;
+  currStore.user.currentUser.tasks.map((e) => {
+    if (
+      new Date(e.date).getMonth() == new Date().getMonth() &&
+      e.status == "complete"
+    )
+      taskcomp++;
+    if (new Date(e.date).getMonth() == new Date().getMonth()) tottasks++;
+  });
+  return parseInt((taskcomp / tottasks) * 100);
+};
+
+const getWeekStats = () => {
+  currStore = store.getState();
+  let taskcomp = 0,
+    tottasks = 0,
+    firstDayOfWeek = date.getDate() - date.getDay(),
+    lastDayOfWeek = firstDayOfWeek + 6,
+    totTasks = 0,
+    compTasks = 0;
+  // (firstDayOfWeek = new Date(firstDayOfWeek)),
+  //   (lastDayOfWeek = new Date(lastDayOfWeek));
+  let first = new Date(firstDayOfWeek),
+    last = new Date(lastDayOfWeek);
+  console.log(first, last);
+  currStore.user.currentUser.tasks.map((e) => {
+    if (
+      new Date(e.date).getMonth() == new Date().getMonth() &&
+      e.status == "complete"
+    )
+      compTasks++;
+    if (new Date(e.date).getMonth() == new Date().getMonth()) totTasks++;
+  });
+  return parseInt((compTasks / totTasks) * 100);
+};
+
 const UserHome = () => {
-  let currStore = store.getState();
+  currStore = store.getState();
   console.log("Logging in as ", currStore.user.currentUser.username);
   // document.getElementById("userName").innerHTML =
   //   "currStore.user.currentUser.username";
@@ -84,8 +142,12 @@ const UserHome = () => {
             <label>Add task: </label> &nbsp;
             <input type="text" id="newTask" />
             <br />
-            <label>Add task due date: </label> &nbsp;
-            <input type="text" id="newTaskDueDate" />
+            <label>Add task due date(m/d/y): </label> &nbsp;
+            <input
+              type="text"
+              id="newTaskDueDate"
+              placeholder={todaysDate.toString()}
+            />
             <br />
             <input type="submit" id="submitAddTask" />
           </form>
@@ -94,6 +156,14 @@ const UserHome = () => {
           <h2>
             Completed Tasks Percentage:{" "}
             <span className="percentage">{getStats()}%</span>
+          </h2>
+          <h2>
+            {month[new Date().getMonth().toString()]}'s Stats:
+            <span className="percentage">{getMonthStats()}%</span>
+          </h2>
+          <h2>
+            This weeks Stats:
+            <span className="percentage">{getWeekStats()}%</span>
           </h2>
         </div>
       </div>

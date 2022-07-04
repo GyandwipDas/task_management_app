@@ -12,15 +12,15 @@
         {
           "tid": 1,
           "task": "meditate",
-          "date": "29-6-2022",
-          "dueDate": "31-6-2022",
+          "date": "6-6-2022",
+          "dueDate": "6-6-2022",
           "status": "complete"
         },
         {
           "tid": 2,
           "task": "workout",
-          "date": "29-6-2022",
-          "dueDate": "29-6-2022",
+          "date": "7-10-2022",
+          "dueDate": "7-10-2022",
           "status": "incomplete"
         }
       ]
@@ -34,8 +34,8 @@
         {
           "tid": 1,
           "task": "meditate",
-          "date": "29-6-2022",
-          "dueDate": "2-7-2022",
+          "date": "7-1-2022",
+          "dueDate": "7-10-2022",
           "status": "complete"
         }
       ]

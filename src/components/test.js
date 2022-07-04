@@ -60,35 +60,40 @@
 // getCurrentWeek();
 
 // const getCurrentMonthStats = () => {
-let currStore = {
-  uid: 1,
-  username: "Gyandwip Das",
-  email: "dasgyandwip@gmail.com",
-  password: "gyandwip",
-  tasks: [
-    {
-      tid: 1,
-      task: "meditate",
-      date: "29-6-2022",
-      status: "complete",
-    },
-    {
-      tid: 2,
-      task: "workout",
-      date: "29-6-2022",
-      status: "incomplete",
-    },
-  ],
-};
+// let currStore = {
+//   uid: 1,
+//   username: "Gyandwip Das",
+//   email: "dasgyandwip@gmail.com",
+//   password: "gyandwip",
+//   tasks: [
+//     {
+//       tid: 1,
+//       task: "meditate",
+//       date: "29-6-2022",
+//       status: "complete",
+//     },
+//     {
+//       tid: 2,
+//       task: "workout",
+//       date: "29-6-2022",
+//       status: "incomplete",
+//     },
+//   ],
+// };
 
-let date = new Date();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
-let days = new Date(year, month, 0).getDate();
+// let date = new Date();
+// let month = date.getMonth() + 1;
+// let year = date.getFullYear();
+// let days = new Date(year, month, 0).getDate();
 // console.log(month, " ", year, " ", days);
 //   };
-let tdate = [],
-  datematch = /-./;
-currStore.tasks.map((e) => tdate.push(e.date.match(datematch)));
-console.log(tdate);
+// let tdate = [],
+//   datematch = /-./;
+// currStore.tasks.map((e) => tdate.push(e.date.match(datematch)));
+// console.log(tdate);
 // while(currStore.tasks.date)
+
+console.log(new Date());
+
+let temp = new Date("7-4-2022");
+console.log(temp.toString());
