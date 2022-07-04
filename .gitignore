@@ -22,6 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src\redux\login
-src\redux\registration
-src\redux\tasks
+src/redux/login
+src/redux/registration
+src/redux/tasks
