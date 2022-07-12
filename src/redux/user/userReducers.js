@@ -1,5 +1,3 @@
-import store from "../../redux/store";
-
 import {
   LOGIN_REQUEST,
   LOGOUT_REQUEST,
@@ -12,7 +10,7 @@ const initialState = require("../../components/DB.json");
 var index = null;
 var today = new Date();
 var date =
-  today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+  today.getMonth() + 1 + "-" + today.getDate() + "-" + today.getFullYear();
 
 const userReducer = (state = initialState, action) => {
   let emailarr = [];
